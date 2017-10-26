@@ -687,7 +687,7 @@ Polymerエレメントは、イベントを使用してデータを上に向け�
 
 *   プロパティの変更の場合、`detail.value`フィールドにプロパティの新しい値が含まれます。
 *   サブプロパティの変更の場合、サブプロパティへのパスが`detail.path`フィールドに含まれます、そして新しい値が`detail.value`フィールドに含まれます。
-*   配列の変更の場合、`detail.path`フィールドは`myArray.splices`のように配列の変更パスになります。そして`detail.value`フィールドが変更レコードになります。変更レコードについては、ドキュメントの[配列オブザーバー](/{{{polymer_version_dir}}}/docs/devguide/observers#array-observation)で解説されています。
+*   配列の変更の場合、`detail.path`フィールドは`myArray.splices`のように配列の変更パスになります。そして`detail.value`フィールドがチェンジレコードになります。チェンジレコードについては、ドキュメントの[配列オブザーバー](/{{{polymer_version_dir}}}/docs/devguide/observers#array-observation)で解説されています。
 
 **注意**：**変更通知イベントの伝播は停止しないでください。**イベントオブジェクトの生成と廃棄を避けるため、Polymerは変更通知にキャッシュされたイベントオブジェクトを使用します。変更通知イベントで`stopPropagation`を呼び出ことで、**そのプロパティにおけるすべてのイベントを将来に渡って防止します。**変更通知イベントはバブリングしないので、伝播を停止する必要はありません。
 {.alert .alert-warning}
