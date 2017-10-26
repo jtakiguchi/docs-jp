@@ -267,7 +267,7 @@ class XCustom extends Polymer.Element {
 
 イベント名の<code><var>property-name</var></code>部分は、プロパティ名をダッシュケースで表現したものです。例えば、`this.firstName`が変更されると`first-name-changed`が発火するといった具合です。
 
-これらのイベントは、双方向データバインディングシステムによって利用されます。外部のスクリプトから`addEventListener`を使用してイベント(`first-name-changed`のような)を監視することもできます。
+これらのイベントは、双方向データバインディングシステムによって利用されます。外部のスクリプトから`addEventListener`を使用してイベント(`first-name-changed`のような)をリッスンすることもできます。
 Property change events don't bubble, so
 the event listener must be added directly to the element generating the event. 
 
