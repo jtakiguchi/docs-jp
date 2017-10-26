@@ -9,7 +9,7 @@ Polymerは、一般的なデータバインディングのユースケースに�
 -   テンプレートリピーター(`dom-repeat`)：配列アイテムごとに、テンプレートのコンテンツでインスタンスを生成します。
 -   配列セレクタ：構造化されたデータの配列において選択状態を管理します。
 -   条件付きテンプレート(`dom-if`)：指定された条件が`true`なら、そのコンテンツをスタンプします。
--   自動バインディングテンプレート(`dom-bind`)：Polymerエレメント外部でデータバインディングが利用できます。
+-   自動バインディングテンプレート(`dom-bind`)：Polymer Element外部でデータバインディングが利用できます。
 
 **2.0向けのヒント**：データバインディングのヘルパーエレメントは、下位バージョンと互換性のある`polymer.html`をインポートする際にバンドルされています。レガシーなインポートを利用しない場合、あなたが使用したヘルパーエレメントを個別にインポートする必要があります。
 {.alert .alert-info}
@@ -23,7 +23,7 @@ Polymerは、一般的なデータバインディングのユースケースに�
 
 テンプレートリピーターを利用するには二つの方法があります。：
 
-*   **Polymerエレメント内またはPolymerが管理する他のテンプレートの内では**、`<template is="dom-repeat>`という省略記法を使用してください。 
+*   **Polymer Element内またはPolymerが管理する他のテンプレートの内では**、`<template is="dom-repeat>`という省略記法を使用してください。 
 
     ~~~html
     <template is="dom-repeat" items="{{items}}">
@@ -49,7 +49,7 @@ Polymerは、一般的なデータバインディングのユースケースに�
     ~~~
 
 
-Polymerが管理するテンプレートには、Polymerエレメントのテンプレートや、`dom-bind`、`dom-if`、`dom-repeat`に属するテンプレート、あるいは`Templatizer`によって管理されるテンプレートが含まれます。
+Polymerが管理するテンプレートには、Polymer Elementのテンプレートや、`dom-bind`、`dom-if`、`dom-repeat`に属するテンプレート、あるいは`Templatizer`によって管理されるテンプレートが含まれます。
 
 ほとんどのケースにおいて、`dom-repeat`には、一番目(省略形)のフォームを使用することになるでしょう。
 
@@ -505,7 +505,7 @@ filter: function(item) {
 
 条件付きテンプレートを使用する方法は二つあります。：
 
-*   **Polymerエレメントまたは他のPolymerの管理するテンプレート内では、**省略記法`<template is="dom-repeat">`を使用してください。
+*   **Polymer Elementまたは他のPolymerの管理するテンプレート内では、**省略記法`<template is="dom-repeat">`を使用してください。
 
     ~~~html
     <template is="dom-if" if="{{condition}}">
@@ -530,7 +530,7 @@ filter: function(item) {
     ~~~
 
 
-Polymerが管理するテンプレートには、Polymerエレメントのテンプレートや、`dom-bind`、`dom-if`、`dom-repeat`に属するテンプレート、あるいは`Templatizer`によって管理されるテンプレートが含まれます。
+Polymerが管理するテンプレートには、Polymer Elementのテンプレートや、`dom-bind`、`dom-if`、`dom-repeat`に属するテンプレート、あるいは`Templatizer`によって管理されるテンプレートが含まれます。
 
 ほとんどのケースにおいて、`dom-repeat`には、一番目(省略形)のフォームを使用することになるでしょう。
 
@@ -633,7 +633,7 @@ Polymer data binding is only available in Polymerのデータバインディン�
 ```
 
 
-`dom-bind`の全ての機能は、Polymerエレメントの中であればすでに使用できます。**自動バインディングテンプレートは、Polymerエレメントの_外部_のみで利用すべきです。**
+`dom-bind`の全ての機能は、Polymer Elementの中であればすでに使用できます。**自動バインディングテンプレートは、Polymer Elementの_外部_のみで利用すべきです。**
 
 _Note: In Polymer 1.0, `dom-bind` rendered asynchronously and fired a `dom-change`
 event to signify readiness. In Polymer 2.0, `dom-bind` renders synchronously. It

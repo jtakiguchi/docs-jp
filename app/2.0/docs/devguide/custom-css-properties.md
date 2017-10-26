@@ -4,7 +4,7 @@ title: カスタムCSSプロパティ
 
 <!-- toc -->
 
-Polymerエレメントの作成者は、カスタムCSSプロパティを提供することで、アプリケーション内でエレメントの見た目をスタイリングすることができます。
+Polymer Elementの作成者は、カスタムCSSプロパティを提供することで、アプリケーション内でエレメントの見た目をスタイリングすることができます。
 
 カスタムプロパティによって、CSSの作成者はすべてのCSSプロパティで利用可能なカスケーディングCSS変数を定義できます。
 
@@ -286,7 +286,7 @@ CSSミックスインを使用する場合、エレメントの作成者はCSS�
 
 フォントファミリーは継承されますが、テキストカラーは継承されない点に注意してください。これは`<paper-checkbox>`がテキストカラーを上書きしているためです。.
 
-### PolymerエレメントのカスタムプロパティAPI {#style-api}
+### Polymer ElementのカスタムプロパティAPI {#style-api}
 
 Polymerのカスタムプロパティのshimは、エレメントの作成時に一度だけカスタムプロパティの値を評価し適用します。CSSクラスの適用など動的な変更があった場合にエレメント（及びそのサブツリー）を再評価するためには、エレメント上で[`updateStyles`](/2.0/docs/api/elements/Polymer.Element#method-updateStyles)メソッドを呼び出して下さい。ページ上のすべてのエレメントをアップデートするには、`Polymer.updateStyles`を呼び出すことができます。
 
@@ -350,7 +350,7 @@ Polymerでは、クロスプラットフォーム上でカスタムプロパテ�
 
 #### ダイナミズムの限界　
 
-作成時においては、エレメントとマッチしたプロパティの定義だけが適用されます。プロパティ値を更新する動的な変更が自動的に適用されることがありません。Polymerエレメント上で[`updateStyles`](/{{{polymer_version_dir}}}/docs/api/elements/Polymer.Element#method-updateStyles)メソッドを呼び出すか、`Polymer.updateStyles`を使って全てのエレメントのスタイルをアップデートすることで、スタイルの再評価を強制的に行うことができます。
+作成時においては、エレメントとマッチしたプロパティの定義だけが適用されます。プロパティ値を更新する動的な変更が自動的に適用されることがありません。Polymer Element上で[`updateStyles`](/{{{polymer_version_dir}}}/docs/api/elements/Polymer.Element#method-updateStyles)メソッドを呼び出すか、`Polymer.updateStyles`を使って全てのエレメントのスタイルをアップデートすることで、スタイルの再評価を強制的に行うことができます。
 
 例えば、エレメント内に次のようなマークアップがあるとします。：
 

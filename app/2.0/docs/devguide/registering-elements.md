@@ -96,7 +96,7 @@ in Custom element concepts.
 ## HTML ImportsとAPI
 
 There are three main HTML imports for defining Polymer elements:
-Polymerエレメントを定義するのに三つの主要なHTML Importsがあります。：
+Polymer Elementを定義するのに三つの主要なHTML Importsがあります。：
 
 
 | インポート | 説明 |

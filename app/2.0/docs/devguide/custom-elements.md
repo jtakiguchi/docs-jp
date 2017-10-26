@@ -47,7 +47,7 @@ const myEl = new MyElement();
 **Custom element names.** 仕様上、**Custom Elementの名前は、小文字のASCII文字で始まり、ダッシュ(-)を含まなければなりません。**既出の名前は短いリストで管理され、それに一致する命名は禁止されています。詳細については、HTML仕様の[Custom elements core concepts](https://html.spec.whatwg.org/multipage/scripting.html#custom-elements-core-concepts)を参照してください。
 {.alert .alert-info}
 
-Polymerは、基本的なCustom Elementの仕様に対して付加的な機能群を提供します。これらの機能をエレメントに付加するには、Polymerエレメントの基底クラス`Polymer.Element`を拡張します。：
+Polymerは、基本的なCustom Elementの仕様に対して付加的な機能群を提供します。これらの機能をエレメントに付加するには、Polymer Elementの基底クラス`Polymer.Element`を拡張します。：
 
 ```html
 <link rel="import" href="/bower_components/polymer/polymer-element.html">

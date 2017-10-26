@@ -3,7 +3,7 @@ subtitle: 機能の概要
 title: Polymerライブラリ
 ---
 
-PolymerライブラリはCustom Elementsを作成するための機能一式を提供します。これらの機能は、標準のDOMエレメントのように動作するCustom Elementsを迅速かつ容易に作成できるように設計されています。標準的なDOMエレメントと同様、Polymerエレメントでは以下のようなことが可能です。：
+PolymerライブラリはCustom Elementsを作成するための機能一式を提供します。これらの機能は、標準のDOMエレメントのように動作するCustom Elementsを迅速かつ容易に作成できるように設計されています。標準的なDOMエレメントと同様、Polymer Elementでは以下のようなことが可能です。：
 
 * コンストラクタまたは`document.createElement`を使用してインスタンス化する。
 * 属性またはプロパティを使用して構成する。
@@ -12,7 +12,7 @@ PolymerライブラリはCustom Elementsを作成するための機能一式を�
 * 内部のデフォルトから、あるいは外部からスタイルを設定する。
 * 内部の状態を操作するメソッドに応答して処理する。
 
-基本的なPolymerエレメントの定義は以下のようになります。：
+基本的なPolymer Elementの定義は以下のようになります。：
 
 ```
     <dom-module id="x-custom">

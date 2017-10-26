@@ -85,7 +85,7 @@ Custom Elements v1仕様の一般的な情報に関しては、Web Fundamentals�
     <td>
       属性が監視されるようにするには<em>明示的に</em>登録されている必要があります。
       <p>
-        Polymerエレメントの場合、<code>properties</code>オブジェクト内で明示的に宣言されたプロパティだけが属性の変更を追跡(tracking)されます。(つまり、属性の値を変更すると、attribute changedコールバックが呼び出され、Polymerは属性からプロパティの値を設定します)。
+        Polymer Elementの場合、<code>properties</code>オブジェクト内で明示的に宣言されたプロパティだけが属性の変更を追跡(tracking)されます。(つまり、属性の値を変更すると、attribute changedコールバックが呼び出され、Polymerは属性からプロパティの値を設定します)。
       <p>
         Custom Elemnets v0では、<strong>どんな</strong>属性の変更に対しても<code>attributeChangedCallback</code>が発生しました。
       <p>
@@ -138,7 +138,7 @@ Polymerによって提供されるすべてのテンプレートのタイプ拡�
 </dom-bind>
 ```
 
-Polymerエレメントのテンプレート内(つまり、`dom-module`の内部)で使用された場合には、Polymerはテンプレートのタイプ拡張(例：`dom-if`や`dom-repeat`など)をテンプレートの処理中に自動的にラップします。これは、Polymerエレメントの内部にネストされたテンプレートや他のPolymerのテンプレート(例：`dom-bind`)において、`<template is="">`を使い続けることができ、またそうすべきことを意味します。
+Polymer Elementのテンプレート内(つまり、`dom-module`の内部)で使用された場合には、Polymerはテンプレートのタイプ拡張(例：`dom-if`や`dom-repeat`など)をテンプレートの処理中に自動的にラップします。これは、Polymer Elementの内部にネストされたテンプレートや他のPolymerのテンプレート(例：`dom-bind`)において、`<template is="">`を使い続けることができ、またそうすべきことを意味します。
 
 `index.html`**のようなメインドキュメントで使用されるテンプレートは、手動でラップする必要があります。**
 
@@ -280,7 +280,7 @@ this.set('property.deep.path', 'new value');
 
 ### データ変更のバッチ処理
 
-バインディングシステムにおけるデータの伝播をバッチで処理するようにないました。それによって、例えば複雑なオブザーバーや算出(computing)関数は、まとまった(coherent)変更をセットとして一度に実行されます。まとまった変更を作成するには、2つの方法があります。：
+バインディングシステムにおけるデータの伝播をバッチで処理するようにないました。それによって、例えばコンプレックスオブザーバーや算出(computing)関数は、まとまった(coherent)変更をセットとして一度に実行されます。まとまった変更を作成するには、2つの方法があります。：
 
 *   エレメントがプロパティを初期化する時は、まとまりのある変更のセットを自動的に生成します。
 
@@ -422,9 +422,9 @@ bower install --save PolymerElements/paper-button#^2.0.0
 
 既存のコードをPolymer 2.0上で動作させる方法については、[Upgrade guide](upgrade)を参照してください。
 
-## Polymerエレメントの可用性 {#elements}
+## Polymer Elementの可用性 {#elements}
 
-開発チームは、Polymer 1.7+と2.xの双方に互換性のある、新しい「ハイブリッド」フォーマットを利用できるようにPolymerエレメントをアップデート中です。
+開発チームは、Polymer 1.7+と2.xの双方に互換性のある、新しい「ハイブリッド」フォーマットを利用できるようにPolymer Elementをアップデート中です。
 
 以下のエレメントはすでにPolymer 2.0をサポートするようにアップデートが完了しています。また、アップデートも不要です。：
 

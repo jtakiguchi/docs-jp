@@ -105,7 +105,7 @@ Polymerの配列変更メソッドを使用して、配列に[監視可能な変
 
 これらのメソッドは配列上で変更アクションを実行し、同じ配列にバインドされているかもしれない他のエレメントに対してその変更を通知します。配列を変更する際にこれらのメソッドを使用することで、(オブザーバー、算出プロパティ、またはデータバインディングを通じて)その配列を監視する全てのエレメントを同期された状態に保つことができます。
 
-すべてのPolymerエレメントには、以下の配列変更メソッドがあり利用することができます。：
+すべてのPolymer Elementには、以下の配列変更メソッドがあり利用することができます。：
 *   <code>push(<var>path</var>, <var>item1</var>, [..., <var>itemN</var>])</code>
 *   <code>pop(<var>path</var>)</code>
 *   <code>unshift(<var>path</var>, <var>item1</var>, [..., <var>itemN</var>])</code>
@@ -158,7 +158,7 @@ Polymerの配列変更メソッドの利用が役立たない場合もありま�
 
 ###  配列の変更をPolymerに通知 {#notifysplices}
 
-可能である時は常に、Polymerの[配列変更メソッド](#array-mutation)を利用すべきです。しかし、これらは必ずしも利用できるとは限りません。例えば、Polymer配列変更メソッドを使わないサードパーティのライブラリを利用しているかもしれません。これらのシナリオにおいては、変更後に<a href="/{{{polymer_version_dir}}}/docs/api/elements/Polymer.Element#method-notifySplices">notifySplices</a>を呼び出すことで、配列を監視するすべてのPolymerエレメントにその変更が適切に通知されるようにできます。
+可能である時は常に、Polymerの[配列変更メソッド](#array-mutation)を利用すべきです。しかし、これらは必ずしも利用できるとは限りません。例えば、Polymer配列変更メソッドを使わないサードパーティのライブラリを利用しているかもしれません。これらのシナリオにおいては、変更後に<a href="/{{{polymer_version_dir}}}/docs/api/elements/Polymer.Element#method-notifySplices">notifySplices</a>を呼び出すことで、配列を監視するすべてのPolymer Elementにその変更が適切に通知されるようにできます。
 
 `notifySplices`メソッドは、配列の変更を一連の`splice`オペレーションに*正規化*することが求められます。例えば、配列上で`shift`を呼び出して配列の最初のエレメントを削除するのは、`splice(0, 1)`を呼び出すことと同じです。
 
