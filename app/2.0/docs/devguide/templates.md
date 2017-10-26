@@ -153,7 +153,7 @@ this.employees.push({first: 'Barret', last: 'Bonden'});
 this.notifyPath('employees');
 ```
 
-詳細については、[オブジェクトと配列を監視可能に変更する](data-system#make-observable-changesy)を参照してください。
+詳細については、[オブジェクトと配列を監視可能(observable)に変更する](data-system#make-observable-changesy)を参照してください。
 
 
 ### `dom-repeat`テンプレート内のイベントの処理 {#handling-events}
@@ -244,7 +244,7 @@ This increments the order count for the item (in これによって、`item`の(
 
 デフォルトでは、`filter`及び`sort`関数は、次のいずれかが発生した時だけ実行されます。
 
-*   配列に[監視可能な変化](data-system#observable-changes)が生じた。(例えば、アイテムの追加または削除によって)
+*   配列に[監視可能(observable)な変化](data-system#observable-changes)が生じた。(例えば、アイテムの追加または削除によって)
 *   `filter`または`sort`関数が変更された。.
 
 関連のないデータの一部が変更された時に、`filter`や`sort`を再実行するには[render](#synchronous-renders)を呼び出してください。例えば、エレメントに`sort`関数の動作を変更する`sortOrder`プロパティがある場合、`sortOrder`に変更があったときに`render`を呼び出すことができます。
@@ -383,7 +383,7 @@ filter: function(item) {
 *   特定のアイテムへスクロールする前に、アイテムのリストがレンダリングされていることを保証する。
 *   データの一部が配列の*外部で*変更されたとき(例えば、ソート順序やフィルタ条件など)、`sort`や`filter`関数を再実行する。
 
-`render`は、Polymerの[配列の変更メソッド](model-data#array-mutation)によって発生するような[監視可能な変化](data-system#observable-changes)**だけ**検出します。
+`render`は、Polymerの[配列の変更メソッド](model-data#array-mutation)によって発生するような[監視可能(observable)な変化](data-system#observable-changes)**だけ**検出します。
 
 テンプレートが*監視不能な変更*を検出するようにするには、[テンプレートを強制的に更新する](#forcing-the-template-to-update)を参照してください 。
 

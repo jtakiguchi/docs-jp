@@ -279,7 +279,7 @@ Polymerは、二種類のデータバインディングデリミタを用意し�
 </dom-module>
 ```
 
-サブプロパティの変更は自動的に[監視可能](data-system#observable-changes)ではありません。
+サブプロパティの変更は自動的に[監視可能(obsevable)](data-system#observable-changes)ではありません。
 
 ホストエレメントがサブプロパティを更新する場合は、[パスでプロパティまたはサブプロパティを設定](model-data#set-path)で説明した通り、`set`メソッドを使用するか、[Polymerへの通知](model-data#notify-path)で説明した`notifyPath`メソッドを使用する必要があります。
 
@@ -575,4 +575,4 @@ Polymer Element上で標準の通知プロパティにバインドする場合�
 
 -   プロパティの変更通知と双方向バインディング：[データフローの制御方法](data-system#data-flow-controld)を参照してください。
 
--   構造化されたデータへのバインディング：[監視可能な変更](data-system#paths)を参照してください。
+-   構造化されたデータへのバインディング：[監視可能(obsevable)な変更](data-system#paths)を参照してください。

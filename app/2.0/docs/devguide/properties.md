@@ -307,7 +307,7 @@ class XCustom extends Polymer.Element {
 
 ## プロパティの属性への反映(reflectToAttribute)  {#attribute-reflection}
 
-ある特定のケースにおいては、HTMLの属性値とプロパティ値を同期させておくと便利かもしれません。`properties`オブジェクト内のプロパティに`reflectToAttribute: true`を設定することで実現できます。 これによって、プロパティに対する_監視可能な変更_は、同名の属性にシリアライズされます。
+ある特定のケースにおいては、HTMLの属性値とプロパティ値を同期させておくと便利かもしれません。`properties`オブジェクト内のプロパティに`reflectToAttribute: true`を設定することで実現できます。 これによって、プロパティに対する_監視可能(observable)な変更_は、同名の属性にシリアライズされます。
 (as described in <a href="#property-name-mapping">Property name to attribute name mapping</a>).
 Since attributes only take string values, the property value is serialized
 to a string, as described in <a href="#attribute-serialization">Attribute serialization</a>.

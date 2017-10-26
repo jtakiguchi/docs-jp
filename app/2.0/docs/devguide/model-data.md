@@ -4,12 +4,12 @@ title: オブジェクトや配列のデータとの連携
 
 <!-- toc -->
 
-データシステムは、エレメントのモデルデータ(プロパティおよびサブプロパティ)に[監視可能な変更](data-system#observable-changes)を加えるためのメソッドを提供します。これらのメソッドを使用して、配列やオブジェクトのサブプロパティに*監視可能な変更*を加えます。
+データシステムは、エレメントのモデルデータ(プロパティおよびサブプロパティ)に[監視可能(observable)な変更](data-system#observable-changes)を加えるためのメソッドを提供します。これらのメソッドを使用して、配列やオブジェクトのサブプロパティに*監視可能(observable)な変更*を加えます。
 
 関連する概念：
 
 - [データパス](data-system#paths)
-- [監視可能な変更](data-system#observable-changes)
+- [監視可能(observable)な変更](data-system#observable-changes)
 
 ## パスの記法
 
@@ -46,7 +46,7 @@ var item = this.get(['myArray', 11])
 
 ## パスによるプロパティまたはサブプロパティの設定 {#set-path}
 
-サブプロパティに[監視可能な変更](data-system#observable-changes)を加えるには[set](/{{{polymer_version_dir}}}/docs/api/elements/Polymer.Element#method-set)メソッドを使用してください。
+サブプロパティに[監視可能(observable)な変更](data-system#observable-changes)を加えるには[set](/{{{polymer_version_dir}}}/docs/api/elements/Polymer.Element#method-set)メソッドを使用してください。
 
 ```js
 // clear an array
@@ -81,7 +81,7 @@ this.set('users', this.users);
 
 ### Polymerにサブプロパティの変更を通知する {#notify-path}
 
-オブジェクトのサブプロパティに変更を加えた後に`notifyPath`呼び出すことで、変更をデータシステムに対して[監視可能](data-system#observable-changes)にします。ta system.
+オブジェクトのサブプロパティに変更を加えた後に`notifyPath`呼び出すことで、変更をデータシステムに対して[監視可能(observable)](data-system#observable-changes)にします。ta system.
 
 ```
 this.profile.name = Alex;
@@ -95,7 +95,7 @@ this.notifyPath('profile.name');
 
 ## 配列との連携 {#work-with-arrays}
 
-Polymerの配列変更メソッドを使用して、配列に[監視可能な変更](data-system#observable-changes)を加えます。
+Polymerの配列変更メソッドを使用して、配列に[監視可能(observable)な変更](data-system#observable-changes)を加えます。
 
 ネイティブメソッド(`Array.prototype.push`のような)を使用して配列を操作する場合、[オブジェクトまたは配列へのバッチによる変更](#batch-changes)で説明しているように、変更を事後的にPolymerに通知することができます。).
 
@@ -193,7 +193,7 @@ this.setProperties({
 
 [linkPaths](/{{{polymer_version_dir}}}/docs/api/elements/Polymer.Element#method-linkPaths)メソッドは二つのパスを関連付けます。[二つのパスが同一のオブジェクトを参照]((data-system#two-paths)での説明の通り、`linkPaths`はエレメントが同じオブジェクトを参照する二つのパスを持つ場合に使用できます。
 
-二つのパスがリンクされている場合、片方のパスへの[監視可能な変更](data-system#observable-changes)は、もう片方のパスでも同じように監視することができます。
+二つのパスがリンクされている場合、片方のパスへの[監視可能(observable)な変更](data-system#observable-changes)は、もう片方のパスでも同じように監視することができます。
 
 ```js
 linkPaths('selectedUser', 'users.1');
