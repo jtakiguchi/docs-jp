@@ -4,7 +4,7 @@ title: Handle and fire events
 
 <!-- toc -->
 
-エレメントはイベントを使用して状態の変化をDOMツリーを通じて親エレメントに伝達します。Polymer Elementは、標準のDOM  APIを使ってイベントの生成、ディスパッチ、監視(listen)を行うことができます。
+エレメントはイベントを使用して状態の変化をDOMツリーを通じて親エレメントに伝達します。Polymer Elementは、標準のDOM  APIを使ってイベントの生成、ディスパッチ、リッスンを行うことができます。
 
 Polymerには*アノテーション付イベントリスナー*も用意されています。このリスナーを使用すると、エレメントのDOMテンプレートの一部としてイベントリスナーを宣言的に記述できます。
 
@@ -39,16 +39,49 @@ Polymerには*アノテーション付イベントリスナー*も用意され�
 
 標準の`addEventListener`及び`removeEventListener`メソッドを使用して、イベントリスナーを命令的に追加または削除することができます。
 
-```js
+### Listener on the custom element
+
+Listeners on a custom element can be set up in `ready()` using `this.addEventListener()`. The listener will be set up the first time the custom element is attached to the DOM.
+
+```
 ready() {
   super.ready();
-  this.addEventListener('click', e => this._myClickListener(e));
+  this.addEventListener('click', this._onClick);
+}
+
+_onClick(event) {
+  this._makeCoffee();
+}
+
+_makeCoffee () {}
+```
+
+
+**The `this` inside the event handler** By default, an event handler is called with the `this` value set to the event's current target. The current target is always equal to the element that the event listener is attached to, in this case, the custom element itself.
+{.alert .alert-info}
+
+### Listener on child elements
+
+The recommended way for setting up a listener on a child element of the custom element is to use an [annotated event listener]() inside the template.
+
+If you need to imperatively set up the listener, it is important to bind the `this` value using `.bind()` or using an arrow function.
+
+```
+ready() {
+  super.ready();
+  const childElement = ...
+  childElement.addEventListener('click', this._onClick.bind(this));
+  childElement.addEventListener('hover', event => this._onHover(event));
 }
 ```
 
+### Listener on outside elements
+
+If you want to listen for events on something other than the custom element or its descendants (e.g. `window`), you need to use `connectedCallback()` and `disconnectedCallback()` to add and remove the event listener appropriately:
+
 上の例では、(ES6から導入された)アロー関数を使用して、Custom Elementを`this`の値としてリスナーが呼び出されるようにしています。また`bind`を使って、リスナー関数がバインドされたインスタンスを作成することもできます。この方法は、リスナーを削除する必要がある場合に役立ちます。
 
-```js
+```
 constructor() {
   super();
   this._boundListener = this._myLocationListener.bind(this);
@@ -65,7 +98,10 @@ disconnectedCallback() {
 }
 ```
 
-自身またはShadow DOMの子のどこかにイベントリスナーを追加したエレメントは、そのエレメントがガベージコレクトされるのを禁止すべきではありません。しかしながら、ウィンドウまたはドキュメントレベルのような外部のエレメントに追加されたイベントリスナーによって、エレメントがガベージコレクションされないことがあります。メモリリークを防止するため`disconnectedCallback`コールバック内でイベントリスナーを削除するようにしてください。s.
+
+
+**メモリリークの危険** 自身またはShadow DOMの子のどこかにイベントリスナーを追加したエレメントは、そのエレメントがガベージコレクトされるのを禁止すべきではありません。しかしながら、ウィンドウまたはドキュメントレベルのような外部のエレメントに追加されたイベントリスナーによって、エレメントがガベージコレクションされないことがあります。メモリリークを防止するため`disconnectedCallback`コールバック内でイベントリスナーを削除するようにしてください。
+{.alert .alert-info}
 
 
 ## カスタムイベントの発火 {#custom-events}

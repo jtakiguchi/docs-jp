@@ -552,7 +552,7 @@ Polymer Elementでないエレメントや、このイベント命名規則に�
 <video url="..." current-time="{{hostTime::timeupdate}}">
 ```
 
-Polymer Element上で標準の通知プロパティにバインドする場合、イベント名の指定は必須ではありません。デフォルトの命名規則のように、`property-changed`イベントを監視するようになっています。以下の構文は同じことです。：
+Polymer Element上で標準の通知プロパティにバインドする場合、イベント名の指定は必須ではありません。デフォルトの命名規則のように、`property-changed`イベントをリッスンするようになっています。以下の構文は同じことです。：
 
 ```
 <!-- Listens for `value-changed` event -->
