@@ -6,7 +6,7 @@ title: Shadow DOMのスタイリング
 
 ## 要素のスタイリング
 
-PolymerはDOMテンプレートとShadow DOM APIをサポートしています。カスタム要素にDOMテンプレートを利用すると、Polymerはあなたが要素に用意したテンプレートの内容をコピーします。
+PolymerはDOMテンプレートとShadow DOM APIをサポートしています。Custom ElementにDOMテンプレートを利用すると、Polymerはあなたが要素に用意したテンプレートの内容をコピーします。
 
 例:
 
@@ -53,11 +53,11 @@ onents-loader.js"></script>
 <custom-element></custom-element>
 ```
 
-テンプレート内のHTML要素は、カスタム要素のShadow DOMの子になります。Shadow DOMは、カプセル化のメカニズムを提供するので、Shadow DOMの内部の要素がShadow DOM外部のセレクタにマッチすることはありません。
+テンプレート内のHTML要素は、Custom ElementのShadow DOMの子になります。Shadow DOMは、カプセル化のメカニズムを提供するので、Shadow DOMの内部の要素がShadow DOM外部のセレクタにマッチすることはありません。
 
 同様に、Shadow DOM内部のスタイルルールについても、Shadow DOM外部の要素にリークして影響を与えることはありません。
 
-Shadow DOMは、カスタム要素に対するスタイルルールのカプセル化を可能にします。要素のスコープ外にスタイルが適用されてしまう心配をせず、フォントやテキスト色、クラスなどのスタイル情報を要素に自由に定義できます。
+Shadow DOMは、Custom Elementsに対するスタイルルールのカプセル化を可能にします。要素のスコープ外にスタイルが適用されてしまう心配をせず、フォントやテキスト色、クラスなどのスタイル情報を要素に自由に定義できます。
 
 例:
 

@@ -5,12 +5,12 @@ title: 要素の定義
 <!-- toc -->
 
 
-## カスタム要素の定義{#register-element}
+## Custom Elementの定義{#register-element}
 
 
-カスタム要素を定義するには、`Polymer.Element`の拡張クラスを作成し、そのクラスを`customElements.define`メソッドに渡します。
+Custom Elementを定義するには、`Polymer.Element`の拡張クラスを作成し、そのクラスを`customElements.define`メソッドに渡します。
 
-仕様では、カスタム要素名は、**小文字のASCII文字で始まり、ダッシュ(-)を含まなければなりません。**
+仕様では、Custom Element名は、**小文字のASCII文字で始まり、ダッシュ(-)を含まなければなりません。**
 
 例: { .caption }
 
@@ -40,7 +40,7 @@ var el1 = document.createElement('my-element');
 var el2 = new MyElement();
 ```
 
-上記の通り、[カスタム要素のライフサイクル](custom-elements#element-lifecycle)で説明したように要素のクラスにはカスタム要素のリアクションとしてコールバックを定義することができる。
+上記の通り、[Custom Elementのライフサイクル](custom-elements#element-lifecycle)で説明したように要素のクラスにはCustom Elementのリアクションとしてコールバックを定義することができる。
 
 ## 既存の要素を拡張 {#extend-element}
 
@@ -166,9 +166,9 @@ customElements.define('x-class', XClass);
 
 ## レガシー要素を定義する {#legacy-element}
 
-レガシーな要素は、要素の登録に`Polymer`関数が使用できます。関数は新しい要素のプロトタイプを引数に取ります。プロトタイプには、カスタム要素のHTMLタグ名を指定する`is`プロパティが必要です。
+レガシーな要素は、要素の登録に`Polymer`関数が使用できます。関数は新しい要素のプロトタイプを引数に取ります。プロトタイプには、Custom ElementのHTMLタグ名を指定する`is`プロパティが必要です。
 
-仕様では、カスタム要素の名前は**ASCII文字で始まり、ダッシュ(-)を含む必要があります。**
+仕様では、Custom Elementの名前は**ASCII文字で始まり、ダッシュ(-)を含む必要があります。**
 
 例: { .caption }
 
@@ -194,11 +194,11 @@ customElements.define('x-class', XClass);
 
 `Polymer`関数は、要素をブラウザに登録し、コードから要素の新たな要素のインスタンスを生成するコンストラクタを返します。
 
-`Polymer`関数はカスタム要素のプロトタイプチェーンを構築し、それをPolymerの`Base`プロトタイプ（Polymerの付加的な機能を提供）につなぎます。そのため開発者が独自のプロトタイプチェーンを構築することはできません。しかし、[behaviors](#prototype-mixins)プロパティを使用することで要素間でコードを共有することはできます。
+`Polymer`関数はCustom Elementのプロトタイプチェーンを構築し、それをPolymerの`Base`プロトタイプ（Polymerの付加的な機能を提供）につなぎます。そのため開発者が独自のプロトタイプチェーンを構築することはできません。しかし、[behaviors](#prototype-mixins)プロパティを使用することで要素間でコードを共有することはできます。
 
 ## ライフサイクルコールバック {#lifecycle-callbacks}
 
-`Polymer.Element`クラスは、Polymerのビルトイン機能で必須のタスクを実行するため、標準のカスタム要素のライフサイクルコールバックを実装しています。
+`Polymer.Element`クラスは、Polymerのビルトイン機能で必須のタスクを実行するため、標準のCustom Elementのライフサイクルコールバックを実装しています。
 
 Polymerは、要素のDOMの生成と初期化が完了した時点で呼び出されれる`ready`という特別なコールバックも用意しています。
 

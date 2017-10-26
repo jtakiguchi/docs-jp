@@ -342,8 +342,8 @@ class XCustom extends Polymer.Element {
 *   `Boolean`：値を持たない属性が設定(`true`の場合)または、削除(`false`の場合)されます。
 *   `Array`または`Object`：`JSON.stringify`を使用してシリアライズされます。
 
-カスタム要素に独自のシリアライズ処理を実装したい場合には、要素の`_serializeValue`メソッドをオーバーライドして下さい。
-
+その他のデータ型に独自のシリアライズ処理を実装したい場合には、要素の`_serializeValue`メソッドをオーバーライドして下さい。
+要素
 ```js
 _serializeValue(value) {
   if (value instanceof MyCustomType) {

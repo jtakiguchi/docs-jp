@@ -105,7 +105,7 @@ Custom Elements v1仕様の一般的な情報に関しては、Web Fundamentals�
 
 ### タイプ拡張要素(Type-extension elements) {#type-extension}
 
-Polymer 2.0では、タイプ拡張要素をサポートしていません（例：`<input is="iron-input">`）。Custom Elements v1の仕様には、タイプ拡張のサポートは引き続き（「カスタマイズされたビルトイン要素(customized build-in elements)」として）含まれ、Chromeでは実装が予定されています。しかし、Apple社は、`is`をサポートしないことを表明しており、Custom Elementsのポリフィルが不確定な仕様に依存するのを避けるため、我々は今後その利用を推奨しません。代わりの方法として、ラッパーカスタム要素でネイティブ要素を囲むことができます。
+Polymer 2.0では、タイプ拡張要素をサポートしていません（例：`<input is="iron-input">`）。Custom Elements v1の仕様には、タイプ拡張のサポートは引き続き（「カスタマイズされたビルトイン要素(customized build-in elements)」として）含まれ、Chromeでは実装が予定されています。しかし、Apple社は、`is`をサポートしないことを表明しており、Custom Elementsのポリフィルが不確定な仕様に依存するのを避けるため、我々は今後その利用を推奨しません。代わりの方法として、ラッパーのCustom Elementでネイティブ要素を囲むことができます。
 
 例えば：
 
@@ -142,7 +142,7 @@ Polymer要素のテンプレート内(つまり、`dom-module`の内部)で使�
 
 `index.html`**のようなメインドキュメントで使用されるテンプレートは、手動でラップする必要があります。**
 
-`custom-style`要素も標準仕様のカスタム要素のように、`<style>`要素をラップするように変更されました。
+`custom-style`要素も標準仕様のCustom Elementのように、`<style>`要素をラップするように変更されました。
 
 例えば：
 

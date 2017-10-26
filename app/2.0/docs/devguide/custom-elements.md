@@ -1,20 +1,20 @@
 ---
-title: カスタム要素のコンセプト
+title: のコンセプト
 ---
 
 <!-- toc -->
 
-カスタム要素(Custom Elements)は、Webにコンポーネントモデルを提供します。カスタム要素の仕様は次の通りです。：
+(Custom Elements)は、Webにコンポーネントモデルを提供します。の仕様は次の通りです。：
 
-*   クラスをカスタム要素の名前に関連付けるためのメカニズム。
-*   カスタム要素のインスタンスの状態が変化した（例えば、ドキュメントに追加またはドキュメントから削除された）際に呼び出される一連のライフサイクルコールバック。
+*   クラスをCustom Elementの名前に関連付けるためのメカニズム。
+*   Custom Elementのインスタンスの状態が変化した（例えば、ドキュメントに追加またはドキュメントから削除された）際に呼び出される一連のライフサイクルコールバック。
 *   インスタンス上で指定した属性グループのいずれかが変更された際に呼び出されるコールバック。
 
 まとめると、これらの機能を利用することで、状態変化に応じて処理を行う独自のパブリックAPIを持った要素が構築できます。
 
-このドキュメントでは、Polymerに関連するカスタム要素の概要について説明します。カスタム要素のより詳細な概要については、[Custom Elements v1: Reusable Web Components](https://developers.google.com/web/fundamentals/getting-started/primers/customelements)を参照してください。
+このドキュメントでは、Polymerに関連するの概要について説明します。のより詳細な概要については、[Custom Elements v1: Reusable Web Components](https://developers.google.com/web/fundamentals/getting-started/primers/customelements)を参照してください。
 
-カスタム要素を定義するには、ES6のクラスを作成し、それをカスタム要素の名前に関連付けます。
+Custom Elementを定義するには、ES6のクラスを作成し、それをCustom Elementの名前に関連付けます。
 
 ```
 // Create a class that extends HTMLElement (directly or indirectly)
@@ -24,7 +24,7 @@ class MyElement extends HTMLElement { … };
 window.customElements.define('my-element', MyElement);
 ```
 
-標準の要素と同じように、カスタム要素を利用できます。：
+標準の要素と同じように、Custom Elementを利用できます。：
 
 ```html
 <my-element></my-element>
@@ -42,12 +42,12 @@ const myEl = document.createElement('my-element');
 const myEl = new MyElement();
 ```
 
-要素のクラスには、その動作(behavior)とパブリックAPIを定義します。クラスは、`HTMLElement`クラスまたは、そのサブクラスの一つ（例えば、他のカスタム要素）を拡張しなければいけません。
+要素のクラスには、その動作(behavior)とパブリックAPIを定義します。クラスは、`HTMLElement`クラスまたは、そのサブクラスの一つ（例えば、他のCustom Element）を拡張しなければいけません。
 
-**Custom element names.** 仕様上、**カスタム要素の名前は、小文字のASCII文字で始まり、ダッシュ(-)を含まなければなりません。**既出の名前は短いリストで管理され、それに一致する命名は禁止されています。詳細については、HTML仕様の[Custom elements core concepts](https://html.spec.whatwg.org/multipage/scripting.html#custom-elements-core-concepts)を参照してください。
+**Custom element names.** 仕様上、**Custom Elementの名前は、小文字のASCII文字で始まり、ダッシュ(-)を含まなければなりません。**既出の名前は短いリストで管理され、それに一致する命名は禁止されています。詳細については、HTML仕様の[Custom elements core concepts](https://html.spec.whatwg.org/multipage/scripting.html#custom-elements-core-concepts)を参照してください。
 {.alert .alert-info}
 
-Polymerは、基本的なカスタム要素の仕様に対して付加的な機能群を提供します。これらの機能を要素に付加するには、Polymer要素の基底クラス`Polymer.Element`を拡張します。：
+Polymerは、基本的なCustom Elementの仕様に対して付加的な機能群を提供します。これらの機能を要素に付加するには、Polymer要素の基底クラス`Polymer.Element`を拡張します。：
 
 ```html
 <link rel="import" href="/bower_components/polymer/polymer-element.html">
@@ -61,16 +61,16 @@ Polymerは、基本的なカスタム要素の仕様に対して付加的な機�
 </script>
 ```
 
-Polymerは基本的なカスタム要素に対して以下の機能を付与します。：
+Polymerは基本的なCustom Elementに対して以下の機能を付与します。：
 
 *   一般的なタスクを処理するためのインスタンスメソッド。
 *   対応する属性に応じてプロパティを設定するなど、プロパティと属性を自動的に処理するための機能。
 *   `<template>`の記述を元に要素のインスタンスにShadow DOMツリーを生成する。
 *   データバインディング、プロパティ変更のオブザーバーや算出プロパティをサポートするデータシステム。
 
-## カスタム要素のライフサイクル {#element-lifecycle}
+## Custom Elementのライフサイクル {#element-lifecycle}
 
-カスタム要素の仕様では、「カスタム要素の反応(reactions)」と呼ばれる一連のコールバックが定義されています。これによって、特定のライフサイクルの変化に応じてユーザーコードを実行することができます。
+Custom Elementの仕様では、「Custom Elementの反応(reactions)」と呼ばれる一連のコールバックが定義されています。これによって、特定のライフサイクルの変化に応じてユーザーコードを実行することができます。
 
 <table>
   <tr>
@@ -141,7 +141,7 @@ connectedCallback() {
 
 ### ワンタイムの初期化
 
-カスタム要素の仕様では、ワンタイムの初期化コールバックは提供されません。そこでPolymerは、要素がDOMに初めて追加されたときだけ呼び出される`ready`コールバックを用意しています。
+の仕様では、ワンタイムの初期化コールバックは提供されません。そこでPolymerは、要素がDOMに初めて追加されたときだけ呼び出される`ready`コールバックを用意しています。
 
 ```js
 ready() {
@@ -177,7 +177,7 @@ ready() {
 
 By specification, custom elements can be used before they're defined. Adding a definition for an
 element causes any existing instances of that element to be *upgraded* to the custom class.
-仕様によれば、カスタム要素は定義する前であっても利用することができます。要素の定義を追加すると、既存の要素のインスタンスはすべてカスタムクラスに*アップグレード*されます。
+仕様によれば、は定義する前であっても利用することができます。要素の定義を追加すると、既存の要素のインスタンスはすべてカスタムクラスに*アップグレード*されます。
 
 例として、次のようなコードを考えます。：
 
@@ -196,15 +196,15 @@ element causes any existing instances of that element to be *upgraded* to the cu
 
 要素をアップグレードさせることで、要素の初期化にかかるコストを遅延させながらDOMに追加することができます。これは進歩的な機能の強化といえるでしょう。
 
-要素は、次のいずれかの*カスタム要素の状態*を持っています。：
+要素は、次のいずれかの*Custom Elementの状態*を持っています。：
 
-*   "uncustomized"：要素には有効なカスタム要素名がありません。これは、ビルトイン要素(`<p>`、`<input>`)または、カスタム要素になることができない未知の要素(`<nonsense>`)のどちらかです。
-*   "undefined"：要素に有効なカスタム要素名(例えば、my-elementのような)はありますが、まだ定義されていません。
-- "custom"：要素は有効なカスタム要素名を持ち、定義もなされ、アップグレードもされています。
+*   "uncustomized"：要素には有効な名がありません。これは、ビルトイン要素(`<p>`、`<input>`)または、Custom Elementになることができない未知の要素(`<nonsense>`)のどちらかです。
+*   "undefined"：要素に有効なCustom Element名(例えば、my-elementのような)はありますが、まだ定義されていません。
+- "custom"：要素は有効なCustom Element名を持ち、定義もなされ、アップグレードもされています。
 *   "custom". The element has a valid custom element name and has been defined and upgraded.
 *   "failed"：要素のアップグレードに失敗しました（例えば、クラスが無効な場合）。
 
-*カスタム要素の状態*はプロパティとして公開はされませんが、要素が定義済みかどうかに関わらずスタイルを設定することができます。
+*Custom Elementの状態*はプロパティとして公開はされませんが、要素が定義済みかどうかに関わらずスタイルを設定することができます。
 
 "custom"及び"uncustomized"状態にある要素は、定義済み(defied)であるとみなされます。定義済みの要素に対しては、擬似クラスセレクタ`:defined`を使用することができます。これを利用して、要素がアップグレードされる前のプレースホルダ用スタイルを提供できます。：
 
@@ -219,7 +219,7 @@ my-element:not(:defined) {
 
 ## 他の要素の拡張 {#extending-elements}
 
-カスタム要素は、HTMLElementだけでなく他のカスタム要素を拡張することもできます。：
+Custom Elementは、HTMLElementだけでなく他のCustom Elementを拡張することもできます。：
 
 
 ```
@@ -242,7 +242,7 @@ class ExtendedElement extends MyElement {
 customElements.define(ExtendedElement.is, ExtendedElement);
 ```
 
-**Polymerは現在、ビルトイン要素の拡張をサポートしていません。**カスタム要素の仕様では、`<button>`や`<input>`のようなビルトイン要素を拡張するためのメカニズムを用意します。仕様では、これらの要素を「カスタマイズされたビルトイン要素(customized built-in elements)」と呼んでいます。*カスタマイズされたビルトイン要素*には、多くの利点があります。（例えば、`<button>`や`<input>`のようなビルトインUI要素でユーザー補助機能(accessibility feature)を利用することができます）しかし、すべてのブラウザベンダーが__カスタマイズされたビルトイン要素__をサポートすることに同意おらず、現時点でPolymerはそれらをサポートしていません。
+**Polymerは現在、ビルトイン要素の拡張をサポートしていません。**の仕様では、`<button>`や`<input>`のようなビルトイン要素を拡張するためのメカニズムを用意します。仕様では、これらの要素を「カスタマイズされたビルトイン要素(customized built-in elements)」と呼んでいます。*カスタマイズされたビルトイン要素*には、多くの利点があります。（例えば、`<button>`や`<input>`のようなビルトインUI要素でユーザー補助機能(accessibility feature)を利用することができます）しかし、すべてのブラウザベンダーが__カスタマイズされたビルトイン要素__をサポートすることに同意おらず、現時点でPolymerはそれらをサポートしていません。
 {.alert .alert-info}
 
 When you extend custom elements, Polymer treats the `properties` object and
