@@ -52,7 +52,7 @@ Polymer CLIを使用してApp Toolboxプロジェクトを生成すると、新�
 
 アプリケーションは、フラグメントが必要とされるまで読み込まれるのを遅延するために、`importHref`を呼び出す必要があります。例えば、ユーザーが新しいルートに変更すると、そのルートに関連付けられたフラグメントがインポートされます。これにより、サーバーへの新たなリクエストが送られるか、あるいは、キャッシュからリソースがロードされるだけかもしれません。
 
-importHrefの例(クラススタイル要素) {.caption}
+importHrefの例(クラススタイルエレメント) {.caption}
 
 ```js
 // get a URL relative to this element
@@ -66,7 +66,7 @@ Polymer.importHref(
     true); /* make import async */
 ```
 
-importHrefの例(ハイブリッド要素) {.caption}
+importHrefの例(ハイブリッドエレメント) {.caption}
 
 ```js
 var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');

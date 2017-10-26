@@ -58,7 +58,7 @@ Try it out in **Plunker**:
 
 ### Shadow DOMの追加
 
-多くの要素は、独自のUIや動作を実装するために内部にDOMノードを持っています。PolymerのDOMテンプレートを使うことで、エレメントにShadow DOMというDOMのサブツリーを作成できます。
+多くのエレメントは、独自のUIや動作を実装するために内部にDOMノードを持っています。PolymerのDOMテンプレートを使うことで、エレメントにShadow DOMというDOMのサブツリーを作成できます。
 
 <demo-tabs selected="0" name="qt-2-shadow-dom" src="http://plnkr.co/edit/buPxSJ?p=preview">
   <demo-tab slot="demo-tab" heading="dom-element.html">
@@ -78,7 +78,7 @@ Shadow DOMはエレメントの内部にカプセル化されています。
 
 <p><a href="/{{{polymer_version_dir}}}/docs/devguide/dom-template" class="blue-button">Learn more: DOM templating</a></p>
 
-### Shadow DOMを使って要素を作成
+### Shadow DOMを使ってエレメントを作成
 
 Shadow DOMを使うことでエレメントを柔軟に構築できます。エレメントの子は割り当てられるので、Shadow DOMツリーに挿入されたかのようにレンダリングされます。
 

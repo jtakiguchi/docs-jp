@@ -3,7 +3,7 @@ subtitle: 機能の概要
 title: Polymerライブラリ
 ---
 
-PolymerライブラリはCustom Elementsを作成するための機能一式を提供します。これらの機能は、標準のDOM要素のように動作するCustom Elementsを迅速かつ容易に作成できるように設計されています。標準的なDOM要素と同様、Polymer要素では以下のようなことが可能です。：
+PolymerライブラリはCustom Elementsを作成するための機能一式を提供します。これらの機能は、標準のDOMエレメントのように動作するCustom Elementsを迅速かつ容易に作成できるように設計されています。標準的なDOMエレメントと同様、Polymerエレメントでは以下のようなことが可能です。：
 
 * コンストラクタまたは`document.createElement`を使用してインスタンス化する。
 * 属性またはプロパティを使用して構成する。
@@ -12,7 +12,7 @@ PolymerライブラリはCustom Elementsを作成するための機能一式を�
 * 内部のデフォルトから、あるいは外部からスタイルを設定する。
 * 内部の状態を操作するメソッドに応答して処理する。
 
-基本的なPolymer要素の定義は以下のようになります。：
+基本的なPolymerエレメントの定義は以下のようになります。：
 
 ```
     <dom-module id="x-custom">
@@ -60,7 +60,7 @@ PolymerライブラリはCustom Elementsを作成するための機能一式を�
 
 このドキュメントでは、機能を次のグループに分けて解説しています。：
 
-*   [Custom Elements](custom-elements)：要素を登録すると、class名がCustom Element名に関連付けられます。この要素は、ライフサイクルを管理するコールバックを提供します。また、Polymerでは、プロパティを宣言することで、要素のプロパティAPIをPolymerのデータシステムに統合することもできます。
+*   [Custom Elements](custom-elements)：エレメントを登録すると、class名がCustom Element名に関連付けられます。このエレメントは、ライフサイクルを管理するコールバックを提供します。また、Polymerでは、プロパティを宣言することで、エレメントのプロパティAPIをPolymerのデータシステムに統合することもできます。
 
 *   [Shadow DOM](shadow-dom)：Shadow DOMは、エレメント内にカプセル化されたローカルのDOMツリーを提供します。PolymerはDOMテンプレートからShadow Treeを自動的に生成し、エレメントに挿入することができます。
 
@@ -68,6 +68,6 @@ PolymerライブラリはCustom Elementsを作成するための機能一式を�
 
 *   [データシステム](data-system)：Polymerのデータシステムは、プロパティオブザーバー(Property Observer)や算出プロパティ(Computed Properties)といった機能によって、プロパティや属性へのデータバインディングを提供しています。
 
-Polymer 1.xベースの既存の要素を新しいAPIにアップグレードする場合は、[Upgrade guide](/2.0/docs/upgrade)を参照してください 。
+Polymer 1.xベースの既存のエレメントを新しいAPIにアップグレードする場合は、[Upgrade guide](/2.0/docs/upgrade)を参照してください 。
 
 リリースの最新の状況を確認したい場合は、[Release notes](/2.0/docs/release-notes)を参照してください。

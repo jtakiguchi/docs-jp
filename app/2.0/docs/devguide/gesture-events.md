@@ -13,7 +13,7 @@ required in modern mobile browsers.
 
 ## ジェスチャーイベントの使用
 
-ハイブリッド要素を使用する場合は、デフォルトでジェスチャーイベントがサポートされています。`Polymer.Element`をベースにクラススタイルで作成した要素では、`Polymer.GestureEventListeners`ミックスインをインポートすることで、ジェスチャサポートを明示的に追加する必要があります。
+ハイブリッドエレメントを使用する場合は、デフォルトでジェスチャーイベントがサポートされています。`Polymer.Element`をベースにクラススタイルで作成したエレメントでは、`Polymer.GestureEventListeners`ミックスインをインポートすることで、ジェスチャサポートを明示的に追加する必要があります。
 
 ```html
 <link rel="import" href="polymer/lib/mixins/gesture-event-listeners.html">
@@ -42,7 +42,7 @@ required in modern mobile browsers.
     Polymer.Gestures.addListener(this, 'track', e => this.trackHandler(e));
     ```
     
-    この`Polymer.Gestures.addListener`メソッドを使用して、ホスト要素にリスナーを追加できます。
+    この`Polymer.Gestures.addListener`メソッドを使用して、ホストエレメントにリスナーを追加できます。
 
 ### ジェスチャーイベントのタイプ
 
@@ -71,7 +71,7 @@ required in modern mobile browsers.
   * `dy`：トラックイベントの開始時から垂直方向にピクセル単位で生じた変化
   * `ddx`：トラックイベントの終了時からから水平方向にピクセル単位で生じた変化
   * `ddy`：トラックイベントの終了時からから垂直方向にピクセル単位で生じた変化
-  * `hover()`：現在ホバーされている要素を判断するために呼び出される可能性のあるメソッド
+  * `hover()`：現在ホバーされているエレメントを判断するために呼び出される可能性のあるメソッド
 
 ### 例
 
@@ -122,9 +122,9 @@ required in modern mobile browsers.
 
 命令的なイベントリスナーの例 { .caption }
 
-以下の例では、ホスト要素に対してリスナーを追加するのに`Polymer.Gestures.addListener`を使用しています。このようなケースでは、アノテーション付イベントリスナーで設定することができません。もし、リスナーがホスト要素またはシャドーDOMの子に対して設定されている場合には、通常、一度追加したイベントリスナーに関してその削除について心配する必要はありません。
+以下の例では、ホストエレメントに対してリスナーを追加するのに`Polymer.Gestures.addListener`を使用しています。このようなケースでは、アノテーション付イベントリスナーで設定することができません。もし、リスナーがホストエレメントまたはシャドーDOMの子に対して設定されている場合には、通常、一度追加したイベントリスナーに関してその削除について心配する必要はありません。
 
-動的に追加された子にイベントリスナーを設定する場合には、子を削除する時点で、`Polymer.Gestures.addListener`によって設定されたイベントリスナーを削除する必要があるかもしれません。これは、子要素がガベージコレクトされるようにするためです。
+動的に追加された子にイベントリスナーを設定する場合には、子を削除する時点で、`Polymer.Gestures.addListener`によって設定されたイベントリスナーを削除する必要があるかもしれません。これは、子エレメントがガベージコレクトされるようにするためです。
 
 ```html
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
@@ -179,5 +179,5 @@ required in modern mobile browsers.
 
 ## ジェスチャーとスクロールの方向
 
-特定のジェスチャーを監視(listen)した場合には、タッチ入力に関してスクロール方向が制御されます。例えば、`track`イベントのリスナーを持つノードは、デフォルトでスクロールが禁止されます。要素は、`this.setScrollDirection(direction, node)`でスクロール方向を上書きすることができます。
+特定のジェスチャーを監視(listen)した場合には、タッチ入力に関してスクロール方向が制御されます。例えば、`track`イベントのリスナーを持つノードは、デフォルトでスクロールが禁止されます。エレメントは、`this.setScrollDirection(direction, node)`でスクロール方向を上書きすることができます。
 引数`direction`には`x`、`y`、`none`、`all`のいずれかになり、引数`node`はデフォルトで`this`になります。
